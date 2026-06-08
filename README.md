@@ -23,7 +23,6 @@ Day08_Lab-8_Team-066/
 └── group_project/
     ├── README.md
     ├── chainlit_app.py
-    ├── app.py
     ├── requirements.txt
     ├── .env.example
     ├── components/
@@ -99,11 +98,11 @@ flowchart TD
 
 ## Phân Công Công Việc
 
-| Thành viên | MSSV | Nhiệm vụ | Trạng thái |
-|---|---|---|---|
-| Nhi | 2A2026010XX | Tổng hợp repo, backend integration, documentation, README, final cleanup | Hoàn thành |
-| Trần Quang Huy | 2A202601010 | Chainlit UI, chatbot UX, source cards, retrieval settings, đóng góp dữ liệu | Hoàn thành |
-| Đặng Hữu Nghĩa | 2A202601005 | Đóng góp dữ liệu, golden questions, evaluation validation, A/B testing | Hoàn thành |
+| Thành viên | MSSV | Nhiệm vụ |  
+|---|---|---| 
+| Thái Thị Yến Nhi | 2A202600783 | Tổng hợp repo, backend integration, documentation, README, final cleanup | 
+| Trần Quang Huy | 2A202601010 | Chainlit UI, chatbot UX, source cards, retrieval settings, đóng góp dữ liệu | 
+| Đặng Hữu Nghĩa | 2A202601005 | Đóng góp dữ liệu, golden questions, evaluation validation, A/B testing | 
 
 ---
 
