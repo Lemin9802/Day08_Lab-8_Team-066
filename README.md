@@ -16,9 +16,9 @@ Day08_Lab-8_Team-066/
 ├── .gitignore
 │
 ├── individual/
-│   ├── Nhi/
-│   ├── 2A202601010_TranQuangHuy/
-│   └── DangHuuNghia-2A202601005/
+│   ├── 2A202600783_Thai-Thi-Yen-Nhi/
+│   ├── 2A202601010_Tran-Quang-Huy/
+│   └── 2A202601005_Dang-Huu-Nghia/
 │
 └── group_project/
     ├── README.md
