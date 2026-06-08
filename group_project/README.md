@@ -60,12 +60,6 @@ Mở:
 http://localhost:8000
 ```
 
-## Optional Streamlit App
-
-```bash
-python -m streamlit run app.py
-```
-
 ## Rebuild Index
 
 Sau khi thay đổi `data/standardized/`, chạy:
@@ -121,7 +115,6 @@ Luật Phòng, chống ma túy 2021 quy định về nội dung gì?
 ```text
 group_project/
 ├── chainlit_app.py
-├── app.py
 ├── requirements.txt
 ├── .env.example
 ├── components/
