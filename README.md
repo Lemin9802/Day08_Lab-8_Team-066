@@ -4,6 +4,101 @@
 
 ---
 
+## Individual Submission Notes
+
+### Các task cá nhân đã hoàn thành
+
+#### Task 1 — Thu thập văn bản pháp luật
+
+- Đã thu thập 3 văn bản pháp luật Việt Nam liên quan đến ma túy và các chất cấm.
+- File PDF gốc được lưu tại `data/landing/legal/`.
+
+#### Task 2 — Crawl bài báo
+
+- Đã crawl 5 bài báo tiếng Việt về nghệ sĩ/người nổi tiếng liên quan đến ma túy.
+- Dữ liệu crawl dạng JSON được lưu tại `data/landing/news/`.
+
+#### Task 3 — Convert sang Markdown
+
+- Đã convert các file PDF pháp luật và JSON bài báo sang Markdown.
+- File Markdown chuẩn hóa được lưu tại:
+  - `data/standardized/legal/`
+  - `data/standardized/news/`
+
+#### Task 4 — Chunking & Indexing
+
+- Chiến lược chunking: `RecursiveCharacterTextSplitter`
+- `chunk_size`: `800`
+- `chunk_overlap`: `120`
+- Embedding: local hashing word/character n-gram embedding
+- Vector store: local JSON vector store
+- File index được lưu tại `data/index/`.
+
+#### Task 5 — Semantic Search
+
+- Đã triển khai semantic search bằng cosine similarity trên local embeddings.
+
+#### Task 6 — Lexical Search
+
+- Đã triển khai BM25 lexical search bằng thư viện `rank-bm25`.
+
+#### Task 7 — Reranking
+
+- Đã triển khai Reciprocal Rank Fusion (RRF).
+- Bổ sung lightweight query-aware reranking.
+
+#### Task 8 — PageIndex / Vectorless Fallback
+
+- Đã triển khai interface tương thích PageIndex cho vectorless fallback.
+- Có local vectorless retrieval fallback dựa trên keyword, section và metadata matching.
+- `PAGEINDEX_API_KEY` và `GEMINI_API_KEY` được cấu hình qua file `.env`.
+
+#### Task 9 — Retrieval Pipeline
+
+- Đã kết hợp semantic search, BM25 search, RRF reranking, query-aware reranking và PageIndex/local fallback.
+- Bổ sung query expansion, intent filtering và source diversification cho các câu hỏi tổng hợp về bài báo/nghệ sĩ.
+
+#### Task 10 — Generation with Citation
+
+- Đã triển khai generation bằng Gemini.
+- Có reorder context để giảm hiện tượng lost-in-the-middle.
+- Context được format bằng nhãn `[Document i]`.
+- Câu trả lời bằng tiếng Việt, có citation.
+- Nếu context không đủ bằng chứng, hệ thống sẽ không đoán và trả lời không thể xác minh từ nguồn hiện có.
+
+### Cách chạy
+
+Chạy lần lượt các task cá nhân:
+
+    python -m src.task1_collect_legal_docs
+    python -m src.task2_crawl_news
+    python -m src.task3_convert_markdown
+    python -m src.task4_chunking_indexing
+    python -m src.task5_semantic_search
+    python -m src.task6_lexical_search
+    python -m src.task7_reranking
+    python -m src.task8_pageindex_vectorless
+    python -m src.task9_retrieval_pipeline
+    python -m src.task10_generation
+
+### Biến môi trường
+
+Tạo file `.env` dựa trên `.env.example` và thêm các biến sau:
+
+    GEMINI_API_KEY=your_gemini_api_key
+    GEMINI_MODEL=gemini-2.5-flash-lite
+    PAGEINDEX_API_KEY=your_pageindex_api_key
+
+File `.env` đã được ignore trong `.gitignore` và không được commit lên GitHub.
+
+### Group Project
+
+Phần group project sẽ được thực hiện ở một repository nhóm riêng.
+
+Link repo sẽ được cập nhật trong `group_project/README.md`.
+
+---
+
 ## Mục Tiêu
 
 Xây dựng một RAG pipeline thực tế, end-to-end, từ thu thập dữ liệu pháp luật và báo chí về ma tuý → xử lý → indexing → retrieval (hybrid + vectorless fallback) → generation có citation.
