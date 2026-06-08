@@ -1,11 +1,11 @@
-# Environment
+# Environment variables
 .env
 .env.*
-!.env.example
 
 # Virtual environments
 .venv/
 .venv_chainlit/
+venv/
 env/
 
 # Python cache
@@ -16,14 +16,17 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# OS / IDE
+# OS files
 .DS_Store
 Thumbs.db
+
+# IDE
 .vscode/
 .idea/
 
 # Logs
 *.log
 
-# Chainlit runtime/cache
-.chainlit/
+# Chainlit local cache/config runtime
+.chainlit/.files/
+.chainlit/translations/

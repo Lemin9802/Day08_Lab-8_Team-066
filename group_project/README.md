@@ -1,263 +1,144 @@
-# Group Project — Search Engine / RAG Chatbot
+# Group Project — LegalRAG Assistant
 
-Folder này sẽ chứa sản phẩm group project cuối cùng của nhóm.
+Web app group project cho Day08 RAG Pipeline v2. Sản phẩm cuối dùng **Chainlit** làm giao diện chatbot/search giống ChatGPT, backend dùng hybrid retrieval + citation generation, có evaluation 15 câu và A/B testing.
 
-Hiện tại mỗi thành viên sẽ phát triển thử nghiệm group project ở repo/folder riêng. Sau khi cả nhóm hoàn thành, nhóm sẽ review và chọn phiên bản tốt nhất để đưa vào folder này.
+## Dataset
 
----
+Dataset group được **curate** từ đóng góp của cả 3 thành viên, không copy toàn bộ dữ liệu thô để tránh trùng lặp và nhiễu retrieval.
 
-## 1. Thành viên
+- Tổng số tài liệu: **16 markdown documents**
+- Legal: **6** văn bản
+- News: **10** bài báo
+- Index: **550 chunks**
+- Chi tiết nguồn giữ/lọc: `docs/dataset_inventory.json`
 
-| Thành viên | Phần cá nhân | Repo/Folder project thử nghiệm | Trạng thái |
-|---|---|---|---|
-| Nhi | `individual/Nhi/` | TBD | Đang phát triển |
-| Huy | `individual/Huy/` | TBD | Chờ cập nhật |
-| Nghia | `individual/Nghia/` | TBD | Chờ cập nhật |
+Đóng góp dữ liệu:
 
----
+- **Nhi:** Nghị định 28/2026, Quyết định 28/2025, Thông tư liên tịch 03/2025, 5 bài báo về Long Nhật/Sơn Ngọc Minh, Bình Gold, Miu Lê, Hữu Tín, Chi Dân.
+- **Huy:** Luật Phòng, chống ma túy 2021, Bộ luật Hình sự 2015 phần tội phạm ma túy, bài Tuổi Trẻ về Hữu Tín.
+- **Nghia:** Nghị định 105/2021, các bài báo về Chi Dân/An Tây/Nguyễn Đỗ Trúc Phương, DJ Thái Hoàng, nữ DJ liên quan ma túy.
 
-## 2. Định hướng sản phẩm group
+## Chức năng
 
-Sản phẩm cuối cùng sẽ là web app có:
-
-- Search Engine để tra cứu tài liệu pháp luật và bài báo.
-- RAG Chatbot trả lời bằng tiếng Việt, có citation.
-- Hiển thị source documents.
-- Hỗ trợ follow-up questions hoặc conversation memory.
-- Evaluation pipeline với golden dataset tối thiểu 15 câu hỏi.
-- A/B testing ít nhất 2 cấu hình retrieval.
-
-Khuyến nghị: xây dựng một web app có cả hai chế độ:
-
-```text
-Mode 1: Search Engine
-Mode 2: RAG Chatbot
-```
-
----
-
-## 3. Cấu trúc dự kiến sau khi chọn bản cuối
-
-```text
-group_project/
-├── README.md
-├── app.py
-├── requirements.txt
-├── .env.example
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── retrieval_pipeline.py
-│   ├── generation.py
-│   ├── memory.py
-│   └── utils.py
-├── data/
-│   ├── landing/
-│   ├── standardized/
-│   └── index/
-├── evaluation/
-│   ├── golden_dataset.json
-│   ├── eval_pipeline.py
-│   ├── ab_test.py
-│   └── results.md
-├── docs/
-│   ├── architecture.md
-│   └── team_contribution.md
-└── screenshots/
-    └── demo.png
-```
-
----
-
-## 4. Yêu cầu 1 — Search Engine / RAG Chatbot
-
-### Search Engine
-
-Chế độ Search Engine cần:
-
-- Nhận query từ user.
-- Chạy retrieval pipeline.
-- Hiển thị danh sách kết quả được xếp hạng.
-- Mỗi kết quả có:
-  - Source file
-  - Type: legal/news
-  - Score
-  - Snippet/preview
-  - Metadata nếu có
-
-### RAG Chatbot
-
-Chế độ RAG Chatbot cần:
-
-- Nhận câu hỏi tự nhiên từ user.
-- Retrieve context liên quan.
-- Gọi LLM để sinh câu trả lời.
-- Trả lời bằng tiếng Việt.
-- Có citation dạng `[Document i]`.
-- Hiển thị source documents đã dùng.
-- Không đoán nếu context không đủ bằng chứng.
-- Có thể hỗ trợ follow-up questions bằng conversation memory.
-
----
-
-## 5. Pipeline đề xuất
-
-```text
-User Query
-→ Semantic Search
-→ BM25 Lexical Search
-→ RRF Merge
-→ Query-aware Reranking
-→ PageIndex / Vectorless Fallback
-→ Context Formatting
-→ Gemini/OpenAI Generation
-→ Answer with Citation
-```
-
----
-
-## 6. Yêu cầu 2 — Evaluation Pipeline
-
-Nhóm cần chọn một framework evaluation, ví dụ:
-
-- DeepEval
-- RAGAS
-- TruLens
-
-Deliverables bắt buộc:
-
-```text
-group_project/evaluation/golden_dataset.json
-group_project/evaluation/eval_pipeline.py
-group_project/evaluation/ab_test.py
-group_project/evaluation/results.md
-```
-
-Golden dataset cần tối thiểu 15 cặp Q&A:
-
-```json
-{
-  "question": "...",
-  "expected_answer": "...",
-  "expected_context": ["..."],
-  "category": "legal/news"
-}
-```
-
-Metrics cần đánh giá:
-
-- Faithfulness
-- Answer Relevance
-- Context Recall
-- Context Precision
-
-A/B testing cần so sánh ít nhất 2 config, ví dụ:
-
-```text
-Config A: Hybrid retrieval + RRF
-Config B: BM25-only retrieval
-```
-
----
-
-## 7. Báo cáo evaluation
-
-File `evaluation/results.md` cần có:
-
-```markdown
-# Evaluation Results
+- RAG Chatbot tiếng Việt có citation `[S1]`, `[S2]`.
+- Source cards hiển thị nguồn được truy xuất.
+- Hybrid retrieval: dense hashing + BM25 + RRF + reranking + fallback.
+- Query rewriting / conversation memory nhẹ.
+- Gemini generation khi có quota; extractive fallback nếu Gemini lỗi/quota hết.
+- Evaluation 15 câu, có Context Recall, Context Precision, Faithfulness proxy, Answer Relevance.
+- A/B test: Hybrid vs BM25-only vs vectorless fallback.
 
 ## Setup
 
-- Dataset:
-- Framework:
-- Model:
-- Retrieval configs:
-
-## Overall Scores
-
-| Config | Faithfulness | Answer Relevance | Context Recall | Context Precision |
-|---|---:|---:|---:|---:|
-| Config A | ... | ... | ... | ... |
-| Config B | ... | ... | ... | ... |
-
-## Worst Performers
-
-| Question | Problem | Proposed Fix |
-|---|---|---|
-| ... | ... | ... |
-
-## Conclusion
-
-...
-```
-
----
-
-## 8. Phân công công việc dự kiến
-
-| Vai trò | Thành viên | Output |
-|---|---|---|
-| Data lead | TBD | Chọn data tốt nhất, chuẩn hóa `data/` |
-| Retrieval lead | TBD | `src/retrieval_pipeline.py` |
-| Generation lead | TBD | `src/generation.py` |
-| UI lead | TBD | `app.py` |
-| Evaluation lead | TBD | `evaluation/` |
-| Documentation lead | TBD | `README.md`, `docs/` |
-
----
-
-## 9. Cách chạy dự kiến
-
-Sau khi group project cuối cùng được đưa vào folder này:
-
 ```bash
 cd group_project
-python -m venv .venv
-.venv\Scripts\activate
+python -m venv .venv_chainlit
+.venv_chainlit\Scripts\activate
 python -m pip install -r requirements.txt
-python -m streamlit run app.py
 ```
 
-Với Mac/Linux:
-
-```bash
-cd group_project
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
----
-
-## 10. Biến môi trường
-
-Tạo file `.env` trong `group_project/` dựa trên `.env.example`:
+Tạo `.env` từ `.env.example` nếu dùng Gemini:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY=your_key
 GEMINI_MODEL=gemini-2.5-flash-lite
-PAGEINDEX_API_KEY=your_pageindex_api_key
+TOP_K=8
+SCORE_THRESHOLD=0.05
 ```
 
-Không commit `.env`.
+Nếu Gemini bị quota hoặc chưa có key, app vẫn chạy bằng fallback extractive.
 
----
+## Run Chainlit App
 
-## 11. Checklist group project cuối cùng
+```bash
+python -m chainlit run chainlit_app.py
+```
+
+Mở:
 
 ```text
-[ ] Có app chạy được
-[ ] Có Search Engine
-[ ] Có RAG Chatbot
-[ ] Có citation
-[ ] Có hiển thị source documents
-[ ] Có evaluation/golden_dataset.json với 15+ câu
-[ ] Có eval_pipeline.py
-[ ] Có ab_test.py
-[ ] Có results.md
-[ ] Có README hướng dẫn chạy
-[ ] Có phân công công việc
-[ ] Có screenshot hoặc demo note
+http://localhost:8000
 ```
+
+## Optional Streamlit App
+
+```bash
+python -m streamlit run app.py
+```
+
+## Rebuild Index
+
+Sau khi thay đổi `data/standardized/`, chạy:
+
+```bash
+python -m src.build_index
+```
+
+Expected output hiện tại:
+
+```text
+Documents: 16
+Chunks: 550
+```
+
+## Evaluation
+
+```bash
+python evaluation/eval_pipeline.py
+python evaluation/ab_test.py
+```
+
+Kết quả hiện tại:
+
+```text
+Context Recall: 1.000
+Answer Relevance: ~0.787
+Best A/B config: A_hybrid
+```
+
+File kết quả:
+
+```text
+evaluation/results.md
+evaluation/ab_test_results.md
+evaluation/eval_details.json
+evaluation/ab_test_details.json
+```
+
+## Demo Questions
+
+```text
+Nghị định 28/2026 quy định gì về danh mục chất ma túy và tiền chất?
+Bộ nào quản lý tiền chất sử dụng trong lĩnh vực công nghiệp?
+Cơ sở cai nghiện bắt buộc được nhắc đến như thế nào?
+Những nghệ sĩ nào trong dữ liệu liên quan tới ma túy?
+Bài báo về Bình Gold nói gì về việc dương tính với ma túy?
+Luật Phòng, chống ma túy 2021 quy định về nội dung gì?
+```
+
+## Structure
+
+```text
+group_project/
+├── chainlit_app.py
+├── app.py
+├── requirements.txt
+├── .env.example
+├── components/
+├── rag/
+├── src/
+├── data/
+│   ├── standardized/
+│   └── index/
+├── evaluation/
+├── docs/
+└── screenshots/
+```
+
+## Team Contribution
+
+| Member | Main contribution |
+|---|---|
+| Nhi | Base dataset, generation, evaluation/golden questions, integration |
+| Huy | Chainlit UI, retrieval UX, legal/news sources, Huy golden questions |
+| Nghia | Legal/news sources, Nghia golden questions, evaluation validation |
