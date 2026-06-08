@@ -1,19 +1,15 @@
 # Day08 — RAG Pipeline v2 Group Submission
 
-Đây là repository group dùng để nộp bài Day08 — RAG Pipeline v2.
+Repository này là bài nộp nhóm cho **Day08 — RAG Pipeline v2**.
 
-Repository này được tổ chức theo dạng monorepo để chứa:
-
-1. Phần bài cá nhân của từng thành viên.
-2. Phần group project cuối cùng của nhóm.
-3. Tài liệu hướng dẫn cấu trúc, phân công và cách chạy.
+Repo được tổ chức theo dạng monorepo, gồm phần bài cá nhân của từng thành viên và phần group project của nhóm.
 
 ---
 
-## 1. Cấu trúc repo
+## Cấu Trúc Repository
 
 ```text
-Day08_RAG_pipeline_cohort2/
+Day08_Lab-8_Team-066/
 ├── README.md
 ├── requirements.txt
 ├── .env.example
@@ -21,323 +17,216 @@ Day08_RAG_pipeline_cohort2/
 │
 ├── individual/
 │   ├── Nhi/
-│   │   ├── README.md
-│   │   ├── requirements.txt
-│   │   ├── .env.example
-│   │   ├── src/
-│   │   └── data/
-│   │
-│   ├── Huy/
-│   │   └── README.md
-│   │
-│   └── Nghia/
-│       └── README.md
+│   ├── 2A202601010_TranQuangHuy/
+│   └── DangHuuNghia-2A202601005/
 │
 └── group_project/
     ├── README.md
+    ├── chainlit_app.py
     ├── app.py
     ├── requirements.txt
     ├── .env.example
+    ├── components/
+    ├── rag/
     ├── src/
     ├── data/
+    │   ├── standardized/
+    │   └── index/
     ├── evaluation/
+    │   ├── golden_dataset.json
+    │   ├── eval_pipeline.py
+    │   ├── ab_test.py
+    │   ├── results.md
+    │   └── ab_test_results.md
     ├── docs/
+    │   ├── architecture.md
+    │   ├── team_contribution.md
+    │   └── dataset_inventory.json
     └── screenshots/
 ```
 
 ---
 
-## 2. Quy ước tổ chức bài cá nhân
+## Group Project
 
-Tất cả phần bài cá nhân phải nằm trong folder:
+Sản phẩm nhóm là **LegalRAG Assistant** — web app hỗ trợ tra cứu thông tin pháp luật Việt Nam và tin tức liên quan đến ma túy.
 
-```text
-individual/<Tên thành viên>/
-```
+Hệ thống có các chức năng chính:
 
-Ví dụ:
-
-```text
-individual/Nhi/
-individual/Huy/
-individual/Nghia/
-```
-
-Không để code cá nhân rải ở root repo như:
-
-```text
-src/
-data/
-```
-
-Root repo chỉ dùng để quản lý cấu trúc chung và tài liệu.
-
----
-
-## 3. Trạng thái bài cá nhân
-
-| Thành viên | Folder | Trạng thái | Ghi chú |
-|---|---|---|---|
-| Nhi | `individual/Nhi/` | Đã hoàn thành Task 1–10 | Đã có `src/`, `data/`, `requirements.txt`, `.env.example`, README |
-| Huy | `individual/Huy/` | Chờ cập nhật | Copy bài cá nhân vào folder này |
-| Nghia | `individual/Nghia/` | Chờ cập nhật | Copy bài cá nhân vào folder này |
-
----
-
-## 4. Cách thành viên copy bài cá nhân vào repo group
-
-Mỗi thành viên làm bài cá nhân ở repo/folder riêng trước. Sau khi hoàn thành, copy các phần sau vào folder tương ứng:
-
-```text
-src/
-data/
-requirements.txt
-.env.example
-README.md
-```
-
-Ví dụ Huy copy vào:
-
-```text
-individual/Huy/
-```
-
-Ví dụ Nghia copy vào:
-
-```text
-individual/Nghia/
-```
-
-Chi tiết hướng dẫn nằm trong:
-
-```text
-individual/Huy/README.md
-individual/Nghia/README.md
-```
-
----
-
-## 5. Quy trình làm việc với Git
-
-Mỗi thành viên nên tạo branch riêng, không push trực tiếp vào `main`.
-
-Ví dụ với Huy:
-
-```bash
-git checkout -b add-huy-individual
-git add individual/Huy
-git commit -m "Add Huy individual submission"
-git push origin add-huy-individual
-```
-
-Ví dụ với Nghia:
-
-```bash
-git checkout -b add-nghia-individual
-git add individual/Nghia
-git commit -m "Add Nghia individual submission"
-git push origin add-nghia-individual
-```
-
-Sau đó tạo Pull Request vào `main`.
-
----
-
-## 6. Group Project
-
-Folder group project nằm tại:
-
-```text
-group_project/
-```
-
-Hiện tại nhóm đang phát triển thử nghiệm group project ở các repo/folder riêng. Sau khi 3 thành viên hoàn thành bản thử nghiệm, nhóm sẽ review và chọn phiên bản tốt nhất để đưa vào `group_project/`.
-
-Sản phẩm group cuối cùng dự kiến là web app có:
-
-- Search Engine để tra cứu tài liệu pháp luật và bài báo.
-- RAG Chatbot trả lời bằng tiếng Việt, có citation.
-- Hiển thị source documents.
-- Hỗ trợ follow-up questions hoặc conversation memory.
-- Evaluation pipeline với golden dataset tối thiểu 15 câu hỏi.
-- A/B testing ít nhất 2 cấu hình retrieval.
-
----
-
-## 7. Cấu trúc dự kiến của `group_project/`
-
-Sau khi chọn bản cuối, folder `group_project/` nên có cấu trúc:
-
-```text
-group_project/
-├── README.md
-├── app.py
-├── requirements.txt
-├── .env.example
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── retrieval_pipeline.py
-│   ├── generation.py
-│   ├── memory.py
-│   └── utils.py
-├── data/
-│   ├── landing/
-│   ├── standardized/
-│   └── index/
-├── evaluation/
-│   ├── golden_dataset.json
-│   ├── eval_pipeline.py
-│   ├── ab_test.py
-│   └── results.md
-├── docs/
-│   ├── architecture.md
-│   └── team_contribution.md
-└── screenshots/
-    └── demo.png
-```
-
----
-
-## 8. Phân công công việc group project dự kiến
-
-| Vai trò | Thành viên | Output |
-|---|---|---|
-| Data lead | TBD | Chọn data tốt nhất, chuẩn hóa `data/` |
-| Retrieval lead | TBD | `group_project/src/retrieval_pipeline.py` |
-| Generation lead | TBD | `group_project/src/generation.py` |
-| UI lead | TBD | `group_project/app.py` |
-| Evaluation lead | TBD | `group_project/evaluation/` |
-| Documentation lead | TBD | `group_project/README.md`, `docs/` |
-
-Có thể gộp vai trò nếu nhóm ít người.
-
----
-
-## 9. Yêu cầu group project
-
-### 9.1. RAG Chatbot / Search Engine
-
-Sản phẩm cuối cùng nên có:
-
-- Giao diện web bằng Streamlit, Gradio hoặc Chainlit.
-- Chế độ Search Engine để tra cứu tài liệu.
-- Chế độ RAG Chatbot để hỏi đáp tự nhiên.
+- RAG chatbot tiếng Việt.
+- Giao diện Chainlit giống chatbot.
+- Truy xuất tài liệu bằng hybrid retrieval.
 - Trả lời có citation.
 - Hiển thị source documents đã dùng.
-- Có thể hỗ trợ follow-up questions.
-
-### 9.2. Evaluation pipeline
-
-Cần có:
-
-- `group_project/evaluation/golden_dataset.json`
-- `group_project/evaluation/eval_pipeline.py`
-- `group_project/evaluation/ab_test.py`
-- `group_project/evaluation/results.md`
-
-Golden dataset tối thiểu 15 cặp Q&A:
-
-```text
-question
-expected_answer
-expected_context
-```
-
-Metrics cần có:
-
-- Faithfulness
-- Answer Relevance
-- Context Recall
-- Context Precision
-
-A/B testing tối thiểu 2 config, ví dụ:
-
-```text
-Config A: Hybrid retrieval + RRF reranking
-Config B: BM25-only retrieval
-```
-
-Báo cáo cần có:
-
-- Bảng điểm.
-- Phân tích worst performers.
-- Đề xuất cải tiến.
+- Hỗ trợ follow-up questions bằng conversation memory nhẹ.
+- Evaluation pipeline với golden dataset 15 câu hỏi.
+- A/B testing giữa nhiều cấu hình retrieval.
 
 ---
 
-## 10. Hướng dẫn chạy phần cá nhân của Nhi
+## Kiến Trúc Hệ Thống
 
-Từ root repo:
+```mermaid
+flowchart TD
+    A[User Query] --> B[Chainlit Chat UI]
+
+    subgraph UI["User Interface Layer"]
+        B --> C[Conversation Memory]
+        C --> D[Query Rewrite]
+    end
+
+    subgraph Retrieval["Retrieval Layer"]
+        D --> E[Dense Search]
+        D --> F[BM25 Lexical Search]
+        E --> G[RRF Merge]
+        F --> G
+        G --> H[Query-aware Reranking]
+        D --> I[Vectorless Fallback]
+        I --> H
+    end
+
+    subgraph Generation["Generation Layer"]
+        H --> J[Context Formatting]
+        J --> K[Gemini Generation]
+        K --> L[Extractive Fallback<br/>if API fails or quota is exceeded]
+    end
+
+    L --> M[Answer with Citations]
+    M --> N[Source Documents / Source Cards]
+```
+
+---
+
+## Phân Công Công Việc
+
+| Thành viên | MSSV | Nhiệm vụ | Trạng thái |
+|---|---|---|---|
+| Nhi | 2A2026010XX | Tổng hợp repo, backend integration, documentation, README, final cleanup | Hoàn thành |
+| Trần Quang Huy | 2A202601010 | Chainlit UI, chatbot UX, source cards, retrieval settings, đóng góp dữ liệu | Hoàn thành |
+| Đặng Hữu Nghĩa | 2A202601005 | Đóng góp dữ liệu, golden questions, evaluation validation, A/B testing | Hoàn thành |
+
+---
+
+## Hướng Dẫn Chạy
+
+### Cài đặt dependencies
 
 ```bash
-cd individual/Nhi
+cd group_project
+python -m venv .venv_chainlit
+.venv_chainlit\Scripts\activate
 python -m pip install -r requirements.txt
-python -m src.task9_retrieval_pipeline
-python -m src.task10_generation
 ```
 
-Nếu cần chạy đủ toàn bộ task:
+### Tạo file môi trường
 
-```bash
-python -m src.task1_collect_legal_docs
-python -m src.task2_crawl_news
-python -m src.task3_convert_markdown
-python -m src.task4_chunking_indexing
-python -m src.task5_semantic_search
-python -m src.task6_lexical_search
-python -m src.task7_reranking
-python -m src.task8_pageindex_vectorless
-python -m src.task9_retrieval_pipeline
-python -m src.task10_generation
-```
-
----
-
-## 11. Biến môi trường
-
-Không commit file `.env`.
-
-Mỗi thành viên tự tạo `.env` local trong folder cá nhân hoặc trong `group_project/` khi cần chạy code:
+Tạo file `.env` từ `.env.example` nếu muốn dùng Gemini:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key
+GEMINI_API_KEY=your_gemini_key
 GEMINI_MODEL=gemini-2.5-flash-lite
-PAGEINDEX_API_KEY=your_pageindex_api_key
+PAGEINDEX_API_KEY=your_pageindex_key
 ```
 
-File `.env.example` chỉ chứa tên biến, không chứa key thật.
+Nếu không có Gemini key hoặc hết quota, app vẫn chạy bằng extractive fallback.
+
+### Rebuild index
+
+```bash
+python -m src.build_index
+```
+
+Expected output:
+
+```text
+Documents: 16
+Chunks: 550
+```
+
+### Chạy evaluation
+
+```bash
+python evaluation/eval_pipeline.py
+python evaluation/ab_test.py
+```
+
+Kết quả được lưu tại:
+
+```text
+group_project/evaluation/results.md
+group_project/evaluation/ab_test_results.md
+```
+
+### Chạy app
+
+```bash
+python -m chainlit run chainlit_app.py
+```
+
+Mở trình duyệt tại:
+
+```text
+http://localhost:8000
+```
 
 ---
 
-## 12. Những file không được commit
-
-Không commit:
+## Demo Questions
 
 ```text
-.env
-.venv/
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
+Nghị định 28/2026 quy định gì về danh mục chất ma túy và tiền chất?
+Bộ nào quản lý tiền chất sử dụng trong lĩnh vực công nghiệp?
+Cơ sở cai nghiện bắt buộc được nhắc đến như thế nào?
+Những nghệ sĩ nào trong dữ liệu liên quan tới ma túy?
+Bài báo về Bình Gold nói gì về việc dương tính với ma túy?
+Luật Phòng, chống ma túy 2021 quy định về nội dung gì?
 ```
-
-Nếu lỡ thấy các file này trong `git status`, cần xóa hoặc đảm bảo `.gitignore` đã ignore.
 
 ---
 
-## 13. Checklist trước khi nộp cuối cùng
+## Evaluation Summary
 
-```text
-[ ] individual/Nhi đã có đầy đủ bài cá nhân
-[ ] individual/Huy đã có đầy đủ bài cá nhân
-[ ] individual/Nghia đã có đầy đủ bài cá nhân
-[ ] group_project đã có app cuối cùng
-[ ] group_project có README hướng dẫn chạy
-[ ] group_project có evaluation/golden_dataset.json với 15+ câu
-[ ] group_project có eval_pipeline.py
-[ ] group_project có ab_test.py
-[ ] group_project có results.md
-[ ] README root mô tả đúng cấu trúc repo
-[ ] Không có .env, .venv, __pycache__, *.pyc trong git
-```
+Kết quả hiện tại:
+
+| Metric | Score |
+|---|---:|
+| Context Recall | 0.933 |
+| Context Precision | 0.300 |
+| Faithfulness Proxy | 0.359 |
+| Citation Coverage | 0.359 |
+| Answer Relevance | 0.798 |
+
+A/B testing:
+
+| Config | Avg Context Recall |
+|---|---:|
+| Hybrid | 0.933 |
+| Lexical | 0.933 |
+| Vectorless | 0.867 |
+
+Best config: **Hybrid retrieval**.
+
+---
+
+## Checklist Deliverables
+
+- [x] Phần cá nhân của từng thành viên nằm trong `individual/`.
+- [x] Group project nằm trong `group_project/`.
+- [x] Web app Chainlit chạy được.
+- [x] RAG chatbot trả lời tiếng Việt, có citation.
+- [x] Source documents được hiển thị.
+- [x] Golden dataset có 15 câu hỏi.
+- [x] Evaluation pipeline chạy được.
+- [x] A/B testing có báo cáo.
+- [x] README mô tả kiến trúc và phân công.
+- [x] Không commit `.env`, `.venv`, `__pycache__`, `*.pyc`.
+
+---
+
+## Ghi Chú
+
+- Dataset group được curate từ đóng góp của cả 3 thành viên, không copy toàn bộ dữ liệu thô để tránh trùng lặp và nhiễu retrieval.
+- Gemini API có thể bị giới hạn quota. Khi Gemini lỗi hoặc hết quota, hệ thống tự động dùng extractive fallback.
+- Chi tiết dataset nằm trong `group_project/docs/dataset_inventory.json`.
+- Chi tiết kiến trúc nằm trong `group_project/docs/architecture.md`.
+- Chi tiết phân công nằm trong `group_project/docs/team_contribution.md`.
