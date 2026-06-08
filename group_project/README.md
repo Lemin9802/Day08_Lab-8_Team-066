@@ -85,8 +85,8 @@ python evaluation/ab_test.py
 Kết quả hiện tại:
 
 ```text
-Context Recall: 0.933
-Answer Relevance: ~0.798
+Context Recall: 1.000
+Answer Relevance: ~0.726
 Best A/B config: A_hybrid
 ```
 

@@ -2,8 +2,8 @@
 
 | Config | Avg Context Recall |
 |---|---:|
-| A_hybrid | 0.933 |
-| B_lexical | 0.933 |
-| C_vectorless | 0.867 |
+| A_hybrid | 1.000 |
+| B_lexical | 1.000 |
+| C_vectorless | 0.933 |
 
 Best config: **A_hybrid**.

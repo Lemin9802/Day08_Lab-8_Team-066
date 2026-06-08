@@ -7,12 +7,12 @@
     "retrieved_sources": [
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
-      "nghia_nghi-dinh-105-2021.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
+      "nghia_nghi-dinh-105-2021.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
-      "nhi_thong-tu-lien-tich-03-2025-bca-vksndtc-tandtc-co-so-cai-nghien-bat-buoc.md"
+      "huy_luat-phong-chong-ma-tuy-2021.md"
     ]
   },
   {
@@ -28,7 +28,7 @@
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
-      "nhi_thong-tu-lien-tich-03-2025-bca-vksndtc-tandtc-co-so-cai-nghien-bat-buoc.md"
+      "nghia_nghi-dinh-105-2021.md"
     ]
   },
   {
@@ -43,7 +43,7 @@
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
-      "huy_luat-phong-chong-ma-tuy-2021.md",
+      "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md"
     ]
   },
@@ -56,7 +56,7 @@
       "nhi_article_01.md",
       "nghia_article_02.md",
       "nghia_article_01.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_05.md",
       "nghia_nghi-dinh-105-2021.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
@@ -74,9 +74,9 @@
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
+      "nghia_article_03.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
-      "nghia_nghi-dinh-105-2021.md",
-      "huy_bo-luat-hinh-su-2015.md"
+      "nghia_nghi-dinh-105-2021.md"
     ]
   },
   {
@@ -115,12 +115,12 @@
     "config": "A_hybrid",
     "id": "huy_q003",
     "question": "Bài báo về Hữu Tín nêu sự việc gì?",
-    "context_recall": 0.0,
+    "context_recall": 1.0,
     "retrieved_sources": [
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_02.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nhi_article_04.md",
       "nhi_article_04.md",
       "nghia_nghi-dinh-105-2021.md",
@@ -154,9 +154,9 @@
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
-      "nghia_article_05.md",
-      "huy_luat-phong-chong-ma-tuy-2021.md",
-      "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md"
+      "nhi_article_02.md",
+      "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
+      "nghia_article_03.md"
     ]
   },
   {
@@ -171,7 +171,7 @@
       "huy_luat-phong-chong-ma-tuy-2021.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
-      "nhi_thong-tu-lien-tich-03-2025-bca-vksndtc-tandtc-co-so-cai-nghien-bat-buoc.md",
+      "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md"
     ]
   },
@@ -186,7 +186,7 @@
       "nghia_article_01.md",
       "nhi_article_05.md",
       "nhi_article_05.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md",
       "nghia_nghi-dinh-105-2021.md"
     ]
@@ -199,12 +199,12 @@
     "retrieved_sources": [
       "nghia_article_03.md",
       "nhi_article_04.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_01.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_05.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
-      "huy_bo-luat-hinh-su-2015.md"
+      "nghia_article_03.md"
     ]
   },
   {
@@ -216,11 +216,11 @@
       "nghia_article_05.md",
       "nghia_article_05.md",
       "nhi_article_05.md",
-      "nghia_article_03.md",
       "nghia_article_05.md",
       "nhi_article_04.md",
+      "nghia_nghi-dinh-105-2021.md",
       "nghia_article_01.md",
-      "nghia_article_01.md"
+      "huy_huu-tin-tuoi-tre.md"
     ]
   },
   {
@@ -236,7 +236,7 @@
       "huy_luat-phong-chong-ma-tuy-2021.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
       "nhi_nghi-dinh-28-2026-nd-cp-danh-muc-chat-ma-tuy-tien-chat.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md"
+      "nghia_nghi-dinh-105-2021.md"
     ]
   },
   {
@@ -355,15 +355,15 @@
     "config": "B_lexical",
     "id": "huy_q003",
     "question": "Bài báo về Hữu Tín nêu sự việc gì?",
-    "context_recall": 0.0,
+    "context_recall": 1.0,
     "retrieved_sources": [
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_02.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nhi_article_04.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nhi_article_04.md"
     ]
   },
@@ -441,9 +441,9 @@
       "nhi_article_04.md",
       "nghia_article_03.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_01.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_05.md"
     ]
   },
@@ -459,7 +459,7 @@
       "nghia_article_01.md",
       "nhi_article_04.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nhi_article_05.md"
     ]
   },
@@ -539,8 +539,8 @@
       "nhi_article_01.md",
       "nghia_article_01.md",
       "nhi_article_01.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md"
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md"
     ]
   },
   {
@@ -595,11 +595,11 @@
     "config": "C_vectorless",
     "id": "huy_q003",
     "question": "Bài báo về Hữu Tín nêu sự việc gì?",
-    "context_recall": 0.0,
+    "context_recall": 1.0,
     "retrieved_sources": [
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_02.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
@@ -677,8 +677,8 @@
     "question": "Bài báo về DJ Thái Hoàng nói gì về tàng trữ ma túy?",
     "context_recall": 0.0,
     "retrieved_sources": [
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md",
+      "huy_huu-tin-tuoi-tre.md",
+      "huy_huu-tin-tuoi-tre.md",
       "nghia_article_01.md",
       "nghia_article_05.md",
       "nghia_article_05.md",
@@ -700,7 +700,7 @@
       "nhi_article_05.md",
       "huy_luat-phong-chong-ma-tuy-2021.md",
       "huy_bo-luat-hinh-su-2015.md",
-      "huy_tuoitre.vn_diß╗àn-vi├¬n-hß╗»u-t├¡n-l├únh-7-n─âm-6-th├íng-t├╣.md"
+      "huy_huu-tin-tuoi-tre.md"
     ]
   },
   {

@@ -189,19 +189,19 @@ Kết quả hiện tại:
 
 | Metric | Score |
 |---|---:|
-| Context Recall | 0.933 |
-| Context Precision | 0.300 |
-| Faithfulness Proxy | 0.359 |
-| Citation Coverage | 0.359 |
-| Answer Relevance | 0.798 |
+| Context Recall | 1.000 |
+| Context Precision | 0.308 |
+| Faithfulness Proxy | 0.343 |
+| Citation Coverage | 0.343 |
+| Answer Relevance | 0.726 |
 
 A/B testing:
 
 | Config | Avg Context Recall |
 |---|---:|
-| Hybrid | 0.933 |
-| Lexical | 0.933 |
-| Vectorless | 0.867 |
+| Hybrid | 1.000 |
+| Lexical | 1.000 |
+| Vectorless | 0.933 |
 
 Best config: **Hybrid retrieval**.
 

@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-06-08T23:31:17.794886",
+  "created_at": "2026-06-09T02:51:23.066166",
   "chunk_size": 800,
   "chunk_overlap": 120,
   "embedding": "local-hashing-word-char-ngram-v1",

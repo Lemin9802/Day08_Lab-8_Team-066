@@ -74,7 +74,7 @@
     "question": "Bài báo về Hữu Tín nêu sự việc gì?",
     "expected_answer": "Bài báo về Hữu Tín nêu sự việc diễn viên này liên quan đến sử dụng ma túy và bị xét xử hoặc nhận án tù.",
     "expected_context": [
-      "huy_tuoitre.vn_diễn-viên-hữu-tín-lãnh-7-năm-6-tháng-tù.md"
+      "huy_huu-tin-tuoi-tre.md"
     ],
     "category": "news",
     "contributed_by": "Huy"
