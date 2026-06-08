@@ -14,9 +14,9 @@ Dataset group được **curate** từ đóng góp của cả 3 thành viên, kh
 
 Đóng góp dữ liệu:
 
-- **Nhi:** Nghị định 28/2026, Quyết định 28/2025, Thông tư liên tịch 03/2025, 5 bài báo về Long Nhật/Sơn Ngọc Minh, Bình Gold, Miu Lê, Hữu Tín, Chi Dân.
-- **Huy:** Luật Phòng, chống ma túy 2021, Bộ luật Hình sự 2015 phần tội phạm ma túy, bài Tuổi Trẻ về Hữu Tín.
-- **Nghia:** Nghị định 105/2021, các bài báo về Chi Dân/An Tây/Nguyễn Đỗ Trúc Phương, DJ Thái Hoàng, nữ DJ liên quan ma túy.
+- **Thái Thị Yến Nhi:** Nghị định 28/2026, Quyết định 28/2025, Thông tư liên tịch 03/2025, 5 bài báo về Long Nhật/Sơn Ngọc Minh, Bình Gold, Miu Lê, Hữu Tín, Chi Dân.
+- **Trần Quang Huy:** Luật Phòng, chống ma túy 2021, Bộ luật Hình sự 2015 phần tội phạm ma túy, bài Tuổi Trẻ về Hữu Tín.
+- **Đặng Hữu Nghĩa:** Nghị định 105/2021, các bài báo về Chi Dân/An Tây/Nguyễn Đỗ Trúc Phương, DJ Thái Hoàng, nữ DJ liên quan ma túy.
 
 ## Chức năng
 
@@ -25,7 +25,7 @@ Dataset group được **curate** từ đóng góp của cả 3 thành viên, kh
 - Hybrid retrieval: dense hashing + BM25 + RRF + reranking + fallback.
 - Query rewriting / conversation memory nhẹ.
 - Gemini generation khi có quota; extractive fallback nếu Gemini lỗi/quota hết.
-- Evaluation 15 câu, có Context Recall, Context Precision, Faithfulness proxy, Answer Relevance.
+- Evaluation 15 câu, có Context Recall, Context Precision, Faithfulness proxy, Citation Coverage, Answer Relevance.
 - A/B test: Hybrid vs BM25-only vs vectorless fallback.
 
 ## Setup
@@ -91,8 +91,8 @@ python evaluation/ab_test.py
 Kết quả hiện tại:
 
 ```text
-Context Recall: 1.000
-Answer Relevance: ~0.787
+Context Recall: 0.933
+Answer Relevance: ~0.798
 Best A/B config: A_hybrid
 ```
 
@@ -139,6 +139,6 @@ group_project/
 
 | Member | Main contribution |
 |---|---|
-| Nhi | Base dataset, generation, evaluation/golden questions, integration |
-| Huy | Chainlit UI, retrieval UX, legal/news sources, Huy golden questions |
-| Nghia | Legal/news sources, Nghia golden questions, evaluation validation |
+| Thái Thị Yến Nhi | Base dataset, generation, evaluation/golden questions, integration |
+| Trần Quang Huy | Chainlit UI, retrieval UX, legal/news sources, Huy golden questions |
+| Đặng Hữu Nghĩa | Legal/news sources, Nghia golden questions, evaluation validation |
